@@ -6,7 +6,7 @@ CREATE TYPE "Difficulty" AS ENUM ('BEGINNER', 'MODERATE', 'HARD', 'EXTREME');
 
 -- CreateTable
 CREATE TABLE "Hiker" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL,
     "name" TEXT NOT NULL,
     "age" INTEGER NOT NULL,
     "level" "Level" NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE "Hiker" (
 
 -- CreateTable
 CREATE TABLE "Trail" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL,
     "name" TEXT NOT NULL,
     "difficulty" "Difficulty" NOT NULL,
     "openDate" TIMESTAMP(3) NOT NULL,
@@ -27,10 +27,10 @@ CREATE TABLE "Trail" (
 
 -- CreateTable
 CREATE TABLE "Permit" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL,
     "tanggal" DATE NOT NULL,
-    "hikerId" TEXT NOT NULL,
-    "trailId" TEXT NOT NULL,
+    "hikerId" UUID NOT NULL,
+    "trailId" UUID NOT NULL,
 
     CONSTRAINT "Permit_pkey" PRIMARY KEY ("id")
 );

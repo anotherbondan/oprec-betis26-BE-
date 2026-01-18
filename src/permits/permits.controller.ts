@@ -19,16 +19,16 @@ export class PermitsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.permitsService.findOne(+id);
+    return this.permitsService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePermitDto: UpdatePermitDto) {
-    return this.permitsService.update(+id, updatePermitDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updatePermitDto: UpdatePermitDto) {
+  //   return this.permitsService.update(id, updatePermitDto);
+  // }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.permitsService.remove(+id);
+    return this.permitsService.remove(id);
   }
 }

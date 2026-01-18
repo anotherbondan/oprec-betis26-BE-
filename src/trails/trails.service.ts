@@ -4,7 +4,7 @@ import { UpdateTrailDto } from './dto/update-trail.dto';
 import { PrismaService } from '../prisma.service';
 
 @Injectable()
-export class TrailService {
+export class TrailsService {
   constructor(private prisma: PrismaService) {}
 
   create(data: CreateTrailDto) {

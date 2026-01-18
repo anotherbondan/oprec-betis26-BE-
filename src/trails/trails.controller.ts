@@ -19,16 +19,16 @@ export class TrailsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.trailsService.findOne(+id);
+    return this.trailsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTrailDto: UpdateTrailDto) {
-    return this.trailsService.update(+id, updateTrailDto);
+    return this.trailsService.update(id, updateTrailDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.trailsService.remove(+id);
+    return this.trailsService.remove(id);
   }
 }

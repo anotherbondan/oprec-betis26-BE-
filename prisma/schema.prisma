@@ -15,7 +15,7 @@ datasource db {
 }
 
 model Hiker {
-  id    String @id @default(uuid())
+  id    String @id @default(uuid()) @db.Uuid
   name  String
   age   Int
   level Level
@@ -31,7 +31,7 @@ enum Level {
 }
 
 model Trail {
-  id         String     @id @default(uuid())
+  id         String     @id @default(uuid()) @db.Uuid
   name       String
   difficulty Difficulty
   openDate   DateTime
@@ -48,11 +48,11 @@ enum Difficulty {
 }
 
 model Permit {
-  id      String   @id @default(uuid())
+  id      String   @id @default(uuid()) @db.Uuid
   tanggal DateTime @db.Date
 
-  hikerId String
-  trailId String
+  hikerId String @db.Uuid
+  trailId String @db.Uuid
 
   hiker Hiker @relation(fields: [hikerId], references: [id])
   trail Trail @relation(fields: [trailId], references: [id])

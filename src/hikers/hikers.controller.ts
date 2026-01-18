@@ -1,11 +1,11 @@
 import { Controller, Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
-import { HikerService } from './hikers.service';
+import { HikersService } from './hikers.service';
 import { CreateHikerDto } from './dto/create-hiker.dto';
 import { UpdateHikerDto } from './dto/update-hiker.dto';
 
 @Controller('hikers')
-export class HikerController {
-  constructor(private readonly hikerService: HikerService) {}
+export class HikersController {
+  constructor(private readonly hikerService: HikersService) {}
 
   @Post()
   create(@Body() dto: CreateHikerDto) {

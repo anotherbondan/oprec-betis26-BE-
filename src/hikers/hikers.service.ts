@@ -4,7 +4,7 @@ import { CreateHikerDto } from './dto/create-hiker.dto';
 import { UpdateHikerDto } from './dto/update-hiker.dto';
 
 @Injectable()
-export class HikerService {
+export class HikersService {
   constructor(private prisma: PrismaService) {}
 
   create(data: CreateHikerDto) {
